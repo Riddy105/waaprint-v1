@@ -1,5 +1,40 @@
+@import url("https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap");
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+}
+:root {
+  --blue: #008fd1;
+  --white: #fff;
+}
+html {
+  font-size: 10px;
+}
+body {
+  font-size: 1.6rem;
+  font-family: "Titillium Web", sans-serif;
+}
+a {
+  text-decoration: none;
+}
+
+header {
+  padding: 2.6rem 7.2rem;
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+}
+.nav-links ul {
+  display: flex;
+  gap: 4rem;
+  list-style: none;
+}
+.nav-links a:first-of-type {
+  color: var(--white);
+  background-color: var(--blue);
+  padding: 1.4rem 2rem;
 }
