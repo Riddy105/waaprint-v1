@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Waaprint</title>
     <link rel="stylesheet" href="css/media.css" type="text/css" />
+    <script src="script.js" defer></script>
   </head>
   <body>
     <header>
@@ -30,7 +31,35 @@
           </p>
           <a href="#">Shop Now</a>
         </div>
-        <div class="hero-carousel"></div>
+        <div class="hero-slider">
+          <div class="slide">
+            <input type="radio" name="radio-btn" id="radio1" />
+            <input type="radio" name="radio-btn" id="radio2" />
+            <input type="radio" name="radio-btn" id="radio3" />
+            <img
+              src="/img/Waaprint Ads BS 1.png"
+              class="slide-img first"
+              alt=""
+            />
+            <img src="/img/Waaprint Mug.png" class="slide-img" alt="" />
+            <img
+              src="/img/Waaprint  PAPER BAG3.png"
+              class="slide-img courier"
+              alt=""
+            />
+            <div class="auto-navigation">
+              <div class="auto-btn1"></div>
+              <div class="auto-btn2"></div>
+              <div class="auto-btn3"></div>
+            </div>
+          </div>
+          <!-- manual nav -->
+          <div class="manual-navigation">
+            <label for="radio1" class="manual-btn"></label>
+            <label for="radio2" class="manual-btn"></label>
+            <label for="radio3" class="manual-btn"></label>
+          </div>
+        </div>
       </div>
     </header>
   </body>

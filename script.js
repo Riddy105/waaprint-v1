@@ -1,2 +1,10 @@
-console.log(`Trying git pull out and it's still confusing`);
-// Now my first commit reflected locally on my machine, so I'm gonna write a bit more,
+`use strict`;
+console.log(`Its working`);
+let counter = 1;
+setInterval(function () {
+  document.getElementById(`radio` + counter).checked = true;
+  counter++;
+  if (counter > 3) {
+    counter = 1;
+  }
+}, 3000);
