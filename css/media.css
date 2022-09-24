@@ -111,6 +111,7 @@ nav {
   border-radius: 10px;
   cursor: pointer;
   transition: 1s;
+  z-index: 2;
 }
 .manual-btn:hover {
   background-color: #23e3c9;
