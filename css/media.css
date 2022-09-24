@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap");
 
 * {
@@ -16,6 +16,8 @@ html {
 body {
   font-size: 1.6rem;
   font-family: "Titillium Web", sans-serif;
+  /* overflow-x: hidden; */
+  /* width: 100vw; */
 }
 a {
   text-decoration: none;
@@ -152,6 +154,92 @@ nav {
   background-color: #40d3dc;
 }
 
+/* QUALITY SECTION */
+.quality-section {
+  padding: 3rem 5.5rem;
+}
+.quality-section-header {
+  font-size: 3.6rem;
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+.our-qualities {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 4rem;
+}
+.quality {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.6rem;
+}
+.quality h2 {
+  font-size: 2.4rem;
+}
+.quality p {
+  font-size: 1.8rem;
+}
+
+/* FEATURED-PRODUCT SECTION*/
+.featured-products {
+  background-color: #eee;
+  padding: 3rem 5rem;
+}
+.featured-products-heading {
+  font-weight: 600;
+  font-size: 3.6rem;
+  text-align: center;
+  text-transform: capitalize;
+  margin-bottom: 2rem;
+}
+.products {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4rem 2.5rem;
+}
+.products img {
+  display: block;
+  width: 100%;
+}
+.product-info {
+  /* background-color: var(--white); */
+  padding: 1rem 2rem;
+  box-shadow: 0.5rem 0.5rem 5rem rgb(0, 0, 0, 0.1);
+  border-radius: 0.7rem;
+}
+.product-price {
+  font-weight: 600;
+}
+.view-all-products {
+  display: flex;
+  justify-content: center;
+}
+.view-all-btn {
+  color: var(--white);
+  text-transform: uppercase;
+  background-color: var(--blue);
+  padding: 1.4rem 2rem;
+  display: inline-block;
+  margin-top: 5rem;
+  /* text-align: center; */
+}
+
+/* PARTNERS SECTION */
+.partners {
+  padding: 4rem 0;
+}
+.partners h2 {
+  font-weight: 300;
+  font-size: 2.4rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.partners-logo {
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+}
 @media (max-width: 1200px) {
   .hero-slider {
     align-self: center;
