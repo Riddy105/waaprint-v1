@@ -1,5 +1,4 @@
 `use strict`;
-console.log(`Its working`);
 let counter = 1;
 setInterval(function () {
   document.getElementById(`radio` + counter).checked = true;
@@ -8,3 +7,66 @@ setInterval(function () {
     counter = 1;
   }
 }, 3000);
+
+const productsEl = document.querySelectorAll(`.individual-product`);
+const receiptOptionEl = document.querySelector(`.Receipt-invoice-option`);
+const selectEl = document.querySelector(`select`);
+const optionEl = document.querySelectorAll(`option`);
+
+// receiptOptionEl.addEventListener(`change`, function () {});
+
+// selectEl.addEventListener(`change`, () => {
+//   // AT EVERY POINT WE CLICK ON ANOTHER OPTION, WE FIRST WANT TO DISPLAY ALL THE PRODUCTS AS BLOCK
+//   // THIS IS DUE TO THE PRODUCTS DISPLAYING AS NONE BECAUSE OF THE CONDITIONS IN THE LATER CODES OF THIS
+//   // ADDEVENTLISTENER. I UNDERSTOOD WHY I DID THIS AS AT THE TIME I WROTE THIS CODE BUT I DOUBT BEING ABLE
+//   // TO REFERENCE THIS CODE LATER ON....SO SAD😢
+//   for (const div of productsEl) {
+//     div.style.display = `block`;
+//   }
+
+//   if (selectEl[selectEl.selectedIndex].value == `Receipt-invoice`) {
+//     for (const product of productsEl) {
+//       if (!product.classList.contains(`Receipt-invoice`)) {
+//         product.style.display = `none`;
+//       }
+//     }
+//   } else if (selectEl[selectEl.selectedIndex].value == `business-cards`) {
+//     for (const product of productsEl) {
+//       if (!product.classList.contains(`Business-card`)) {
+//         product.style.display = `none`;
+//       }
+//     }
+//   } else if (selectEl[selectEl.selectedIndex].value == `Flex-banner`) {
+//     for (const product of productsEl) {
+//       if (!product.classList.contains(`flex-banner`)) {
+//         product.style.display = `none`;
+//       }
+//     }
+//   }
+// });
+
+// You have to compute the name of the classes.
+/* TO IMPLEMENT SPECIFIC PRODUCTS DISPLAYING WHEN WE SELECT A MATCHING OPTION FROM A DROPDOWN SELECT, THE CODE 
+ABOVE WAS A SIMPLER AND MORE READABLE WAY OF DOING THAT BUT THE CODE IS REPITITIVE AND HENCE THE NEED 
+TO OPTIMIZE IT WHICH GAVE WAY TO THE CODE BELOW. ALL I DID WAS FIND A WAY TO COMPUTE THE PRODUCTS CLASSES 
+IN SUCH A WAY THAT IT CONTAINS DIGITS, EACH DIGIT IS UNIQUE AND POINTS TO THE INDEX OF THE OPTION FOR THAT 
+PARTICULAR PRODUCT. I'M SUPER PROUD OF MYSELF COS AT THE MOMENT I BUILT THIS, I HAD BARELY TAKEN AN ADVANCED
+DOM MANIPULATION COURSE. 
+
+
+
+*/
+selectEl.addEventListener(`change`, () => {
+  for (const div of productsEl) {
+    div.style.display = `block`;
+  }
+
+  for (let i = 0; i < optionEl.length; i++)
+    if (selectEl.selectedIndex == i) {
+      for (const product of productsEl) {
+        if (!product.classList.contains(`product-${i}`)) {
+          product.style.display = `none`;
+        }
+      }
+    }
+});
