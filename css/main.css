@@ -97,7 +97,7 @@ nav {
   display: none;
 }
 .slide-img {
-  transition: 2s;
+  transition: 2s ease-out;
   object-fit: contain;
 }
 

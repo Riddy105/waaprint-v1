@@ -71,7 +71,7 @@
   /* SLIDER COMPONENT */
   .auto-navigation {
     width: 312px;
-    margin-top: 270px;
+    margin-top: 300px;
   }
   #radio1:checked ~ .first {
     margin-left: 0%;
@@ -93,6 +93,7 @@
   }
   .our-qualities {
     grid-template-columns: 1fr;
+    row-gap: 2rem;
   }
   .quality img {
     width: 7rem;
@@ -189,8 +190,8 @@
   }
 }
 
-@media (max-width: 410px) {
+/* @media (max-width: 410px) {
   .auto-navigation {
     width: 300px;
   }
-}
+} */
