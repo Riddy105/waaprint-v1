@@ -51,6 +51,10 @@ nav {
   border: 2px solid var(--blue);
   padding: 1.4rem 1.2rem;
 }
+.mobile-nav-btn {
+  display: none;
+}
+/* HERO SECTION */
 .hero-section {
   color: var(--white);
   background-color: var(--blue);
@@ -96,11 +100,7 @@ nav {
   transition: 2s;
   object-fit: contain;
 }
-.courier {
-  width: 400px;
-  height: auto;
-  object-fit: contain;
-}
+
 .manual-navigation {
   margin-top: -40px;
   display: flex;
@@ -240,19 +240,116 @@ nav {
   justify-content: center;
   gap: 4rem;
 }
-@media (max-width: 1200px) {
-  .hero-slider {
-    align-self: center;
-  }
-  .slide-img {
-    width: 370px;
-    height: auto;
-    object-fit: contain;
-  }
-  .slide {
-    width: 380px;
-  }
-  #radio2:checked ~ .first {
-    margin-left: -90%;
-  }
+
+/* REVIEW SECTION */
+
+.reviews {
+  background-color: var(--blue);
+  color: var(--white);
+  padding: 3.5rem 6rem 5.8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+.see-all-reviews {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+.see-all-reviews h2 {
+  font-size: 3.6rem;
+  padding: 0 2rem;
+  border-right: 2px solid var(--white);
+}
+.see-all-reviews a {
+  color: var(--blue);
+  padding: 1.4rem 2rem;
+  background-color: var(--white);
+}
+.reviews-header {
+  font-size: 2.4rem;
+  margin-bottom: 3rem;
+  text-align: center;
+  width: 70%;
+}
+.individual-reviews {
+  color: black;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4rem;
+}
+.review-box {
+  padding: 1.8rem 1.9rem;
+  background-color: var(--white);
+  display: flex;
+  align-items: flex-start;
+  gap: 1.7rem;
+}
+.customer-title {
+  font-weight: 700;
+  margin-top: 0.9rem;
+}
+
+/* GET STARTED SESSION */
+.get-started {
+  color: var(--white);
+  padding: 2rem;
+  margin: 4rem auto;
+  width: 90%;
+  background-color: var(--blue);
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+.get-started-text h2 {
+  font-size: 4.8rem;
+  margin-bottom: 1rem;
+  line-height: 5.7rem;
+}
+.get-started-text p {
+  font-size: 2.4rem;
+  margin-bottom: 2rem;
+  line-height: 2.8rem;
+}
+.get-started-text a {
+  display: inline-block;
+  color: black;
+  padding: 1.4rem 2rem;
+  background-color: var(--white);
+}
+.ball {
+  align-self: flex-end;
+}
+
+/* FOOTER */
+footer {
+  color: var(--white);
+  display: flex;
+  gap: 6.5rem;
+  padding: 4rem 6rem;
+  background-color: var(--blue);
+}
+footer .waaprint-logo {
+  background-color: var(--white);
+  padding: 1rem 2rem;
+}
+.social-media {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.8rem;
+}
+ion-icon {
+  font-size: 3rem;
+  color: var(--white);
+}
+.copyright {
+  display: flex;
+  flex-direction: column;
+}
+/* .social-media a {
+  background-color: white;
+  padding: 1rem;
+  border-radius: 50%;
+} */
