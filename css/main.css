@@ -18,8 +18,8 @@ body {
   font-size: 1.6rem;
   font-family: "Titillium Web", sans-serif;
   overflow-x: hidden;
-
   width: 100vw;
+  position: relative;
 }
 a {
   text-decoration: none;

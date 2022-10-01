@@ -38,8 +38,8 @@
     opacity: 1;
     pointer-events: none;
     /* visibility: hidden; */
-    transform: translateX(100%);
-    transition: all 0.5s ease-in;
+    transform: translateX(120%);
+    transition: all 0.5s;
   }
 
   .nav-open .nav-links {
