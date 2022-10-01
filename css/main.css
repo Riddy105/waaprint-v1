@@ -25,7 +25,9 @@ a {
   font-family: "Roboto", sans-serif;
   font-weight: 700;
 }
-
+header {
+  position: relative;
+}
 nav {
   padding: 2.6rem 7.2rem;
   display: flex;
