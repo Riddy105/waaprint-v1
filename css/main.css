@@ -26,7 +26,7 @@ a {
   font-weight: 700;
 }
 header {
-  position: relative;
+  /* position: relative; */
 }
 nav {
   padding: 2.6rem 7.2rem;
@@ -88,6 +88,7 @@ nav {
 .hero-slider {
   background-color: var(--white);
   padding: 3rem 2rem;
+  position: relative;
 }
 .slide {
   display: flex;
