@@ -39,7 +39,7 @@
     pointer-events: none;
     /* visibility: hidden; */
     transform: translateX(100%);
-    transition: all 1s ease-in;
+    transition: all 0.5s ease-in;
   }
 
   .nav-open .nav-links {
