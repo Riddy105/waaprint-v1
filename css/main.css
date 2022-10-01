@@ -13,12 +13,13 @@
 }
 html {
   font-size: 10px;
+  overflow-x: hidden;
 }
 body {
   font-size: 1.6rem;
   font-family: "Titillium Web", sans-serif;
   overflow-x: hidden;
-  width: 100vw;
+  /* width: 100vw; */
 }
 a {
   text-decoration: none;
@@ -26,7 +27,7 @@ a {
   font-weight: 700;
 }
 header {
-  /* position: relative; */
+  position: relative;
 }
 nav {
   padding: 2.6rem 7.2rem;
@@ -88,7 +89,6 @@ nav {
 .hero-slider {
   background-color: var(--white);
   padding: 3rem 2rem;
-  position: relative;
 }
 .slide {
   display: flex;
