@@ -267,6 +267,10 @@
     background-position: 100% 50%;
     border: 0.64px solid rgba(190, 190, 190, 1);
   }
+
+  .filter input::placeholder {
+    font-size: 1.6rem;
+  }
   .dropdown-container {
     display: flex;
     flex-direction: column;
