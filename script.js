@@ -15,7 +15,9 @@ const optionEl = document.querySelectorAll(`option`);
 const navEl = document.querySelector(`nav`);
 const btnEl = document.querySelector(`.mobile-nav-btn`);
 const orderNowEl = document.querySelectorAll(`.order-now`);
+const searchEl = document.querySelector(`.searchfield`);
 
+// POPULATING ALL THE `ORDER NOW` BUTTON WITH THE WHATSAPP LINK ON PAGE LOAD
 function generateWhatsappLink() {
   for (const order of orderNowEl) {
     order.setAttribute(`href`, `https://wa.link/409lp4`);
@@ -38,7 +40,7 @@ selectEl.addEventListener(`change`, () => {
     div.style.display = `block`;
   }
 
-  //Let the loop start from 1 cos 'All products' is at pos 0
+  //Let the loop start from 1 cos 'All products' is at position 0
   for (let i = 1; i < optionEl.length; i++)
     if (selectEl.selectedIndex == i) {
       for (const product of productsEl) {
@@ -88,3 +90,20 @@ selectEl.addEventListener(`change`, () => {
 });
 
 */
+
+// IMPLEMENTING SEARCH INPUT FIELD TO RETURN SPECIFIC PRODUCT ON SEARCH
+searchEl.addEventListener(`input`, (e) => {
+  // WE ALSO WANT TO SET THE DISPLAY OF EACH PRODUCT TO BLOCK ANYTIME AN INPUT IS MADE, IT HIDES ON DEFAULT
+  // AFTER WE RUN THE LINE OF CODE IN THIS EVENT LISTENER.
+  for (const product of productsEl) {
+    product.style.display = `block`;
+  }
+
+  let input = e.target.value.toLowerCase();
+  for (const product of productsEl) {
+    let productName = product.textContent.toLowerCase();
+    if (!productName.includes(input)) {
+      product.style.display = `none`;
+    }
+  }
+});
