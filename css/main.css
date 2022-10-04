@@ -65,6 +65,7 @@ nav {
   display: grid;
   grid-template-columns: 60fr 40fr;
   column-gap: 2rem;
+  align-items: center;
 }
 .hero-text h1 {
   font-weight: 700;
