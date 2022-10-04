@@ -207,7 +207,7 @@ nav {
 }
 .product-info {
   /* background-color: var(--white); */
-  padding: 1rem 2rem;
+  padding: 1rem 2rem 2rem;
   box-shadow: 0.5rem 0.5rem 5rem rgb(0, 0, 0, 0.1);
   border-radius: 0.7rem;
 }
@@ -355,4 +355,74 @@ ion-icon {
 /* PRODUCT PAGE STYLING */
 .product-page-nav {
   box-shadow: 0px 3px 20px 0px rgba(0, 0, 0, 0.25);
+}
+
+.product-page-hero {
+  color: var(--white);
+  padding: 3.5rem 12rem;
+  background: linear-gradient(
+    to right,
+    rgba(34, 191, 182, 1),
+    rgba(0, 131, 176, 1)
+  );
+  width: 95%;
+  margin: 2rem auto 4rem;
+}
+.product-page-hero h2 {
+  font-family: "League Spartan", sans-serif;
+  font-weight: 700;
+  font-size: 4.8rem;
+  text-align: center;
+}
+.product-page-hero p {
+  font-weight: 600;
+  font-size: 2.4rem;
+  line-height: 3.5rem;
+  text-align: center;
+}
+.product-page-main {
+  width: 95%;
+  margin: 0 auto;
+  padding-bottom: 2rem;
+}
+.filter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2.5rem;
+}
+.filter p {
+  font-size: 3.6rem;
+  font-weight: 600;
+  padding-right: 6rem;
+  border-bottom: 1px solid black;
+}
+.filter input {
+  padding: 1.5rem 2rem;
+  background-repeat: no-repeat;
+  background-image: url(/img/search\ icon.png);
+  background-position: 95% 50%;
+  border: 0.64px solid rgba(190, 190, 190, 1);
+}
+.filter input::placeholder {
+  font-size: 1.6rem;
+}
+.dropdown-container {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+#select-dropdown {
+  padding: 1rem;
+}
+#select-dropdown option {
+  font-size: 2rem;
+}
+.order-now {
+  background-color: var(--blue);
+  padding: 1rem 2rem;
+  color: var(--white);
+  display: inline-block;
+  margin-top: 0.9rem;
+  font-size: 1.8rem;
 }
