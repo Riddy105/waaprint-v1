@@ -170,7 +170,7 @@ nav {
 .our-qualities {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  row-gap: 4rem;
+  column-gap: 3rem;
 }
 .quality {
   display: flex;
@@ -292,6 +292,10 @@ nav {
 .customer-title {
   font-weight: 700;
   margin-top: 0.9rem;
+}
+.rounded-img {
+  border-radius: 50%;
+  background-color: #ddd;
 }
 
 /* GET STARTED SESSION */
