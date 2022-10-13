@@ -1,12 +1,4 @@
 `use strict`;
-let counter = 1;
-setInterval(function () {
-  document.getElementById(`radio` + counter).checked = true;
-  counter++;
-  if (counter > 3) {
-    counter = 1;
-  }
-}, 3000);
 
 const productsEl = document.querySelectorAll(`.individual-product`);
 const receiptOptionEl = document.querySelector(`.Receipt-invoice-option`);
@@ -36,10 +28,9 @@ selectEl.addEventListener(`change`, () => {
    THIS IS DUE TO THE PRODUCTS DISPLAYING AS NONE BECAUSE OF THE CONDITIONS IN THE LATER CODES OF THIS
    ADDEVENTLISTENER. I UNDERSTOOD WHY I DID THIS AS AT THE TIME I WROTE THIS CODE BUT I DOUBT BEING ABLE
    TO REFERENCE THIS CODE LATER ON....SO SAD😢*/
-  for (const div of productsEl) {
-    div.style.display = `block`;
-  }
-
+  productsEl.forEach((product, index) => {
+    product.style.display = `block`;
+  });
   //Let the loop start from 1 cos 'All products' is at position 0
   for (let i = 1; i < optionEl.length; i++)
     if (selectEl.selectedIndex == i) {
@@ -95,9 +86,9 @@ selectEl.addEventListener(`change`, () => {
 searchEl.addEventListener(`input`, (e) => {
   // WE ALSO WANT TO SET THE DISPLAY OF EACH PRODUCT TO BLOCK ANYTIME AN INPUT IS MADE, IT HIDES ON DEFAULT
   // AFTER WE RUN THE LINE OF CODE IN THIS EVENT LISTENER.
-  for (const product of productsEl) {
+  productsEl.forEach((product, index) => {
     product.style.display = `block`;
-  }
+  });
 
   let input = e.target.value.toLowerCase();
   for (const product of productsEl) {
