@@ -10,7 +10,7 @@ const btnEl = document.querySelector(`.mobile-nav-btn`);
 const orderNowEl = document.querySelectorAll(`.order-now`);
 const searchEl = document.querySelector(`.searchfield`);
 
-// POPULATING ALL THE `ORDER NOW` BUTTON WITH THE WHATSAPP LINK ON PAGE LOAD
+// POPULATING ALL THE `ORDER NOW` BUTTONS WITH THE WHATSAPP LINK
 function generateWhatsappLink() {
   for (const order of orderNowEl) {
     order.setAttribute(`href`, `https://wa.link/409lp4`);
