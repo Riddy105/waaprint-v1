@@ -11,14 +11,17 @@ const tick = function () {
 tick();
 setInterval(tick, 2500);
 
+const mediaQuery = window.matchMedia("(max-width : 430px)");
 // IMPLEMENTING QUALITY SECTION FADE-IN WITH INTERSECTION OBSERVER
 const qualitySectionEl = document.querySelector(`.quality-section`);
+const navigationEl = document.querySelector(`nav`);
 qualitySectionEl.classList.add(`fade-in`); // For performance, I am hiding the section with javascript so it's completely visible to anyone who has turned off JS engine
 // const navElement = document.querySelector(`nav`);
 const ObsCallBack = function (entries) {
   const [entry] = entries;
   if (entry.isIntersecting) {
     qualitySectionEl.classList.remove(`fade-in`);
+    navigationEl.classList.remove(`nav-open`);
     // navElement.classList.remove(`nav-open`);
   } else {
     qualitySectionEl.classList.add(`fade-in`);

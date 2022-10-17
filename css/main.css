@@ -163,8 +163,9 @@ nav {
   padding: 3rem 5.5rem;
   transition: transform 2s;
 }
-.fade-in {
-  transform: translateX(100%);
+
+.individual-product {
+  transition: transform 1.5s;
 }
 .quality-section-header {
   font-size: 3.6rem;
@@ -293,6 +294,7 @@ nav {
   display: flex;
   align-items: flex-start;
   gap: 1.7rem;
+  transition: all 1.5s;
 }
 .customer-title {
   font-weight: 700;
@@ -332,6 +334,7 @@ nav {
 }
 .ball {
   align-self: flex-end;
+  transition: all 2s;
 }
 
 /* FOOTER */
@@ -434,4 +437,19 @@ ion-icon {
   display: inline-block;
   margin-top: 0.9rem;
   font-size: 1.8rem;
+}
+
+/* CLASSES FOR IMPLEMENTING FADE-IN */
+.fade-in {
+  transform: translateX(100%);
+}
+.hide-right {
+  transform: translateX(100%);
+}
+.hide-left {
+  transform: translateX(-100%);
+  opacity: 0;
+}
+.hide-ball {
+  transform: translateX(-100%);
 }

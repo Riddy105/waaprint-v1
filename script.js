@@ -23,6 +23,99 @@ btnEl.addEventListener(`click`, () => {
   navEl.classList.toggle(`nav-open`);
 });
 
+const mediaQueryEl = window.matchMedia("(max-width : 460px)");
+if (mediaQueryEl.matches) {
+  // IMPLEMENTING FADE-IN ON ALL THE PRODUCTS CARD. HERE'S THE LOGIC😊 ==> First, I looped over all the products and I added either a
+  // 'product-even' or 'product-odd' class depending on the index of the product. I wanted all my even cards to scroll-in from the right and opposite
+  // for the odd cards. I added 'hide-right' and 'hide-left' respectively, checkout what this classes do in CSS😉. I then created an observer to
+  // implement this feature. I remove the class of 'hide-right' or 'hide-left if the' if the particular card is intersecting and add the class once it is
+  // not intersecting.
+
+  productsEl.forEach((product, index) => {
+    if (index % 2 === 0) {
+      product.classList.add(`product-even`);
+      product.classList.add(`hide-right`);
+    } else {
+      product.classList.add(`product-odd`);
+      product.classList.add(`hide-left`);
+    }
+  });
+  const evenProducts = document.querySelectorAll(`.product-even`);
+  const oddProducts = document.querySelectorAll(`.product-odd`);
+
+  const obsCallBack = function (entries) {
+    const [entry] = entries;
+    if (
+      entry.target.classList.contains(`product-even`) &&
+      entry.isIntersecting
+    ) {
+      entry.target.classList.remove(`hide-right`);
+    }
+    if (
+      entry.target.classList.contains(`product-even`) &&
+      !entry.isIntersecting
+    ) {
+      entry.target.classList.add(`hide-right`);
+    }
+    if (
+      entry.target.classList.contains(`product-odd`) &&
+      entry.isIntersecting
+    ) {
+      entry.target.classList.remove(`hide-left`);
+    }
+    if (
+      entry.target.classList.contains(`product-odd`) &&
+      !entry.isIntersecting
+    ) {
+      entry.target.classList.add(`hide-left`);
+    }
+  };
+  const observer = new IntersectionObserver(obsCallBack, {
+    root: null,
+    threshold: 0,
+  });
+
+  productsEl.forEach((product) => {
+    observer.observe(product);
+  });
+
+  const reviewEl = document.querySelectorAll(`.review-box`);
+  reviewEl.forEach((review, index) => {
+    review.classList.add(`hide-left`);
+  });
+  const reviewObsCallBack = function (entries) {
+    const [entry] = entries;
+    if (entry.isIntersecting) {
+      entry.target.classList.remove(`hide-left`);
+    } else {
+      entry.target.classList.add(`hide-left`);
+    }
+  };
+  const reviewObsever = new IntersectionObserver(reviewObsCallBack, {
+    root: null,
+    threshold: 0.03,
+  });
+  reviewEl.forEach((review, index) => {
+    reviewObsever.observe(review);
+  });
+
+  // IMPLEMENTING BALL ROLLING
+  const ballEl = document.querySelector(`.ball`);
+  const ballObsCallBack = function (entries) {
+    const [entry] = entries;
+    console.log(entry.isIntersecting);
+    if (entry.isIntersecting) {
+      entry.target.classList.remove(`hide-ball`);
+    } else {
+      entry.target.classList.add(`hide-ball`);
+    }
+  };
+  const ballObsever = new IntersectionObserver(ballObsCallBack, {
+    root: null,
+    threshold: 0,
+  });
+  ballObsever.observe(ballEl);
+}
 // IMPLEMENTING DISPLAY OF PRODUCTS ON SELECTING DIFFERENT OPTIONS IN A SELECT DROPDOWN
 selectEl.addEventListener(`change`, (e) => {
   /* AT EVERY POINT WE CLICK ON ANOTHER OPTION, WE FIRST WANT TO DISPLAY ALL THE PRODUCTS AS BLOCK
