@@ -98,23 +98,6 @@ if (mediaQueryEl.matches) {
   reviewEl.forEach((review, index) => {
     reviewObsever.observe(review);
   });
-
-  // IMPLEMENTING BALL ROLLING
-  const ballEl = document.querySelector(`.ball`);
-  const ballObsCallBack = function (entries) {
-    const [entry] = entries;
-    console.log(entry.isIntersecting);
-    if (entry.isIntersecting) {
-      entry.target.classList.remove(`hide-ball`);
-    } else {
-      entry.target.classList.add(`hide-ball`);
-    }
-  };
-  const ballObsever = new IntersectionObserver(ballObsCallBack, {
-    root: null,
-    threshold: 0,
-  });
-  ballObsever.observe(ballEl);
 }
 // IMPLEMENTING DISPLAY OF PRODUCTS ON SELECTING DIFFERENT OPTIONS IN A SELECT DROPDOWN
 selectEl.addEventListener(`change`, (e) => {

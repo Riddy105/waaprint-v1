@@ -33,3 +33,20 @@ const observer = new IntersectionObserver(ObsCallBack, {
 });
 
 observer.observe(qualitySectionEl);
+
+// IMPLEMENTING BALL ROLLING
+const ballEl = document.querySelector(`.ball`);
+const ballObsCallBack = function (entries) {
+  const [entry] = entries;
+  console.log(entry.isIntersecting);
+  if (entry.isIntersecting) {
+    entry.target.classList.remove(`hide-ball`);
+  } else {
+    entry.target.classList.add(`hide-ball`);
+  }
+};
+const ballObsever = new IntersectionObserver(ballObsCallBack, {
+  root: null,
+  threshold: 0,
+});
+ballObsever.observe(ballEl);
