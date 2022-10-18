@@ -99,6 +99,7 @@ if (mediaQueryEl.matches) {
     reviewObsever.observe(review);
   });
 }
+
 // IMPLEMENTING DISPLAY OF PRODUCTS ON SELECTING DIFFERENT OPTIONS IN A SELECT DROPDOWN
 selectEl.addEventListener(`change`, (e) => {
   /* AT EVERY POINT WE CLICK ON ANOTHER OPTION, WE FIRST WANT TO DISPLAY ALL THE PRODUCTS AS BLOCK
@@ -142,3 +143,17 @@ searchEl.addEventListener(`input`, (e) => {
     }
   });
 });
+
+//IMPLEMENTING NAV-BAR REMOVAL ON PRODUCTS PAGE WHEN WE SCROLL A BIT
+const navBarObserverCallBack = function (entries) {
+  const [entry] = entries;
+  if (!entry.isIntersecting) {
+    navEl.classList.remove(`nav-open`);
+  }
+};
+const navBarObserver = new IntersectionObserver(navBarObserverCallBack, {
+  root: null,
+  threshold: 0.5,
+});
+
+navBarObserver.observe(navEl);

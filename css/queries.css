@@ -258,3 +258,9 @@
     font-size: 1.8rem;
   }
 }
+
+@media (max-width: 390px) {
+  .hero-section {
+    padding: 2.2rem 0.5rem 4rem;
+  }
+}
