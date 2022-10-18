@@ -116,6 +116,10 @@ selectEl.addEventListener(`change`, (e) => {
     if (!product.classList.contains(`product-${dataValue}`)) {
       product.style.display = `none`;
     }
+    if (product.classList.contains(`product-${dataValue}`)) {
+      product.classList.remove(`hide-left`) ||
+        product.classList.remove(`hide-right`);
+    }
   });
 });
 
@@ -131,6 +135,10 @@ searchEl.addEventListener(`input`, (e) => {
     let productName = productNameEl[index].textContent.toLowerCase();
     if (!productName.includes(input)) {
       product.style.display = `none`;
+    }
+    if (productName.includes(input)) {
+      product.classList.remove(`hide-left`) ||
+        product.classList.remove(`hide-right`);
     }
   });
 });
