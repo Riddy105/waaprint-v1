@@ -165,7 +165,7 @@ nav {
 }
 
 .individual-product {
-  transition: transform 1.5s;
+  transition: transform 0.5s;
 }
 .quality-section-header {
   font-size: 3.6rem;
@@ -440,9 +440,7 @@ ion-icon {
 }
 
 /* CLASSES FOR IMPLEMENTING FADE-IN */
-.fade-in {
-  transform: translateX(100%);
-}
+
 .hide-right {
   transform: translateX(100%);
 }

@@ -42,7 +42,6 @@ if (mediaQueryEl.matches) {
   });
   const evenProducts = document.querySelectorAll(`.product-even`);
   const oddProducts = document.querySelectorAll(`.product-odd`);
-
   const obsCallBack = function (entries) {
     const [entry] = entries;
     if (
@@ -100,6 +99,20 @@ if (mediaQueryEl.matches) {
   });
 }
 
+// IMPLEMENTING NAV-BAR REMOVAL WHEN WE SCROLL A BIT
+const navBarObserverCallBack = function (entries) {
+  const [entry] = entries;
+  if (!entry.isIntersecting) {
+    navEl.classList.remove(`nav-open`);
+  }
+};
+const navBarObserver = new IntersectionObserver(navBarObserverCallBack, {
+  root: null,
+  threshold: 0.5,
+});
+
+navBarObserver.observe(navEl);
+
 // IMPLEMENTING DISPLAY OF PRODUCTS ON SELECTING DIFFERENT OPTIONS IN A SELECT DROPDOWN
 selectEl.addEventListener(`change`, (e) => {
   /* AT EVERY POINT WE CLICK ON ANOTHER OPTION, WE FIRST WANT TO DISPLAY ALL THE PRODUCTS AS BLOCK
@@ -143,17 +156,3 @@ searchEl.addEventListener(`input`, (e) => {
     }
   });
 });
-
-//IMPLEMENTING NAV-BAR REMOVAL ON PRODUCTS PAGE WHEN WE SCROLL A BIT
-const navBarObserverCallBack = function (entries) {
-  const [entry] = entries;
-  if (!entry.isIntersecting) {
-    navEl.classList.remove(`nav-open`);
-  }
-};
-const navBarObserver = new IntersectionObserver(navBarObserverCallBack, {
-  root: null,
-  threshold: 0.5,
-});
-
-navBarObserver.observe(navEl);
