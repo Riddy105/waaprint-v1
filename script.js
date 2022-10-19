@@ -111,7 +111,7 @@ selectEl.addEventListener(`change`, (e) => {
   });
   let dataValue = selectEl[selectEl.selectedIndex].dataset.tab;
   productsEl.forEach((product) => {
-    // RETURN WHEN DATAVALUE = 0 BECAUSE ALL PRODUCTS HAVE A DATA-TAB OF 0 SO WE DON'T WANT TO HIDE ANY PRODUCT
+    // RETURN WHEN DATAVALUE = 0 BECAUSE 'ALL PRODUCTS' OPTIONS HAVE A DATA-TAB OF 0 SO WE DON'T WANT TO HIDE ANY PRODUCT
     // WHEN WE SELECT THIS OPTION
     if (dataValue == 0) return;
     if (!product.classList.contains(`product-${dataValue}`)) {
